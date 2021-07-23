@@ -10,7 +10,7 @@ public class PlayerController : MonoBehaviour
     public float jumpForce, angin;
     Rigidbody rb;
     public GameObject cam1, cam2, cam3, triggerAngin, DeathZone3, winUI, jawaban1, jawaban2, gerbang, switchButtonOn, switchButtonoff;
-    public AudioSource clickButton;
+    public AudioSource clickButton, deathSound, BackgroundMusic;
 
     bool isGround, jawabanBenar;
 
@@ -161,6 +161,8 @@ public class PlayerController : MonoBehaviour
 
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
+
+            BackgroundMusic.Stop();
         }
 
         if (col.gameObject.tag == "Jawaban1")
@@ -202,6 +204,7 @@ public class PlayerController : MonoBehaviour
 
         if (col.gameObject.tag == "DeathZone" || col.gameObject.tag == "Obstacle")
         {
+            deathSound.Play();
             Health--;
             healthText.text = "Health: " + Health.ToString();
 
@@ -211,6 +214,7 @@ public class PlayerController : MonoBehaviour
                 healthText.text = "Health: " + Health.ToString();
                 Time.timeScale = 0;
                 GameOverUI.SetActive(true);
+                BackgroundMusic.Stop();
 
                 GameObject cam = GameObject.FindWithTag("MainCamera");
                 cam.GetComponent<CameraMovement>().enabled = false;
@@ -219,6 +223,7 @@ public class PlayerController : MonoBehaviour
                 Cursor.visible = true;
 
                 SkorManager.score = 0;
+
             }
             
 

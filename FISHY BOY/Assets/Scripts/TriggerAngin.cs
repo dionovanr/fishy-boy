@@ -5,6 +5,7 @@ using UnityEngine;
 public class TriggerAngin : MonoBehaviour
 {
     public GameObject triggerAngin;
+    public AudioSource click;
 
     // Start is called before the first frame update
     void Start()
@@ -21,6 +22,7 @@ public class TriggerAngin : MonoBehaviour
 
     private void OnTriggerStay(Collider col)
     {
+        ;
         if (col.gameObject.name == "Balok" || col.gameObject.tag == "Player")
         {
             triggerAngin.SetActive(true);
@@ -28,12 +30,15 @@ public class TriggerAngin : MonoBehaviour
             wind.GetComponent<RotateObject>().enabled = true;
         }
         triggerAngin.SetActive(true);
+
+        
         
 
     }
 
     private void OnTriggerExit(Collider other)
     {
+        click.Play();
         if (other.gameObject.name == "Balok" || other.gameObject.tag == "Player")
         {
             triggerAngin.SetActive(false);
@@ -41,5 +46,10 @@ public class TriggerAngin : MonoBehaviour
             wind.GetComponent<RotateObject>().enabled = false;
         }
         
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        click.Play();
     }
 }
