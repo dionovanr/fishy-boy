@@ -5,19 +5,19 @@ using UnityEngine.UI;
 
 public class CollectCoin : MonoBehaviour
 {
-    public AudioSource collectSound;
-
-    void Update()
+    private void Start()
     {
-        
-
+        //SkorManager.score = 0;
     }
 
-    void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
-        collectSound.Play();
-        SkorManager.score++;
-        Destroy(gameObject);
+        
+        if (other.gameObject.tag.Equals("Player"))
+        {
+            SkorManager.score += 1;
+            Destroy(gameObject);
+        }  
         
     }
 }

@@ -6,16 +6,10 @@ using UnityEngine.UI;
 public class SkorManager : MonoBehaviour
 {
     public GameObject scoreText;
-    public static int score;
+    public static int score = 0;
 
-    //private void Awake()
-    //{
-    //    score = 0;
-    //}
-
-    void Update()
+    private void Update()
     {
-       scoreText.GetComponent<Text>().text = "Score: " + score;   
-        
+        scoreText.GetComponent<Text>().text = "Score: " + score;
     }
 }
