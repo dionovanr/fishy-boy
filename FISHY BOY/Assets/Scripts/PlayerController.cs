@@ -9,7 +9,8 @@ public class PlayerController : MonoBehaviour
     public Vector3 jump;
     public float jumpForce, angin;
     Rigidbody rb;
-    public GameObject cam1, cam2, cam3, triggerAngin, DeathZone3, winUI, jawaban1, jawaban2, gerbang;
+    public GameObject cam1, cam2, cam3, triggerAngin, DeathZone3, winUI, jawaban1, jawaban2, gerbang, switchButtonOn, switchButtonoff;
+    public AudioSource clickButton;
 
     bool isGround, jawabanBenar;
 
@@ -139,6 +140,11 @@ public class PlayerController : MonoBehaviour
 
             GameObject wind = GameObject.FindWithTag("Baling-Baling");
             wind.GetComponent<RotateObject>().enabled = true;
+
+            switchButtonOn.SetActive(true);
+            switchButtonoff.SetActive(false);
+
+            clickButton.Play();
         }
 
         if (col.gameObject.tag == "WinZone")
@@ -211,6 +217,8 @@ public class PlayerController : MonoBehaviour
 
                 Cursor.lockState = CursorLockMode.None;
                 Cursor.visible = true;
+
+                SkorManager.score = 0;
             }
             
 

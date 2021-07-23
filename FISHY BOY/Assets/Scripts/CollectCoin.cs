@@ -5,6 +5,9 @@ using UnityEngine.UI;
 
 public class CollectCoin : MonoBehaviour
 {
+    public ParticleSystem explosion;
+    public AudioSource collectSound;
+
     private void Start()
     {
         //SkorManager.score = 0;
@@ -12,12 +15,18 @@ public class CollectCoin : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        
         if (other.gameObject.tag.Equals("Player"))
         {
-            SkorManager.score += 1;
-            Destroy(gameObject);
+            SkorManager.score++;
+            collectSound.Play();
+            Destroy();
         }  
         
+    }
+
+    public void Destroy()
+    {
+        Instantiate(explosion, transform.position, Quaternion.identity);
+        Destroy(gameObject);
     }
 }
