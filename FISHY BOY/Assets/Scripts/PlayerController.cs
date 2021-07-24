@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
     public float jumpForce, angin;
     Rigidbody rb;
     public GameObject cam1, cam2, cam3, triggerAngin, DeathZone, winUI, jawaban1, jawaban2, jawaban3, jawaban4, jawaban5, gerbang, switchButtonOn, switchButtonoff;
+    public GameObject buttonJawaban1, buttonJawaban2;
     public AudioSource clickButton, deathSound, BackgroundMusic, wrongMusic, correctMusic;
 
     bool isGround, jawabanBenar;
@@ -193,7 +194,9 @@ public class PlayerController : MonoBehaviour
             papanTulisAnim.Play("PapanTulisJatoh");
             Destroy(jawaban2);
             correctMusic.Play();
-            
+            Destroy(buttonJawaban1);
+            Health += 2;
+            healthText.text = "Health: " + Health.ToString();
 
         }
         if(col.gameObject.tag == "Jawaban2")
@@ -216,7 +219,9 @@ public class PlayerController : MonoBehaviour
             Destroy(jawaban4);
             Destroy(jawaban5);
             correctMusic.Play();
-            
+            Destroy(buttonJawaban2);
+            Health += 2;
+            healthText.text = "Health: " + Health.ToString();
         }
 
         if (col.gameObject.tag == "Jawaban4")

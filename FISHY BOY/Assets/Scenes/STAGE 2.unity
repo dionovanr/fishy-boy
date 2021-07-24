@@ -10941,6 +10941,16 @@ PrefabInstance:
       objectReference: {fileID: 178931032}
     - target: {fileID: 6940324173198360324, guid: 0a70e194270301b41af63d327d0a88ff,
         type: 3}
+      propertyPath: buttonJawaban1
+      value: 
+      objectReference: {fileID: 1088538816}
+    - target: {fileID: 6940324173198360324, guid: 0a70e194270301b41af63d327d0a88ff,
+        type: 3}
+      propertyPath: buttonJawaban2
+      value: 
+      objectReference: {fileID: 1630305909}
+    - target: {fileID: 6940324173198360324, guid: 0a70e194270301b41af63d327d0a88ff,
+        type: 3}
       propertyPath: papanTulisAnim
       value: 
       objectReference: {fileID: 5360414798687379322}
