@@ -8,6 +8,7 @@ public class KeyItem : MonoBehaviour
     public static int kunci = 0;
     public Text keyText;
     public GameObject keyUI;
+    public AudioSource keyCollect;
 
     private void OnTriggerEnter(Collider col)
     {
@@ -17,6 +18,7 @@ public class KeyItem : MonoBehaviour
             Destroy(gameObject);
             keyText.text = "Kunci: " + kunci.ToString();
             keyUI.SetActive(true);
+            keyCollect.Play();
         }
     }
 }

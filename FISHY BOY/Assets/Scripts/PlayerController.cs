@@ -9,8 +9,8 @@ public class PlayerController : MonoBehaviour
     public Vector3 jump;
     public float jumpForce, angin;
     Rigidbody rb;
-    public GameObject cam1, cam2, cam3, triggerAngin, DeathZone3, winUI, jawaban1, jawaban2, jawaban3, jawaban4, jawaban5, gerbang, switchButtonOn, switchButtonoff;
-    public AudioSource clickButton, deathSound, BackgroundMusic;
+    public GameObject cam1, cam2, cam3, triggerAngin, DeathZone, winUI, jawaban1, jawaban2, jawaban3, jawaban4, jawaban5, gerbang, switchButtonOn, switchButtonoff;
+    public AudioSource clickButton, deathSound, BackgroundMusic, wrongMusic, correctMusic;
 
     bool isGround, jawabanBenar;
 
@@ -28,7 +28,7 @@ public class PlayerController : MonoBehaviour
     public bool canJump;
     public bool canMove;
 
-    int Health = 5;
+    public int Health = 5;
     int score;
     public Text scoreText, healthText;
     public GameObject GameOverUI;
@@ -87,13 +87,28 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
         PlayerJump();
-        //canJump = Physics.CheckSphere(GroundCheck.position, checkDistance, GroundMask);
 
-        //if (canJump && Input.GetButtonDown("Jump"))
-        //{
-        //    Rigidbody rb = GetComponent<Rigidbody>();
-        //    rb.velocity = Vector3.up * jumpForce;
-        //}
+        if (Health <= 0)
+         {
+            Health = 0;
+            healthText.text = "Health: " + Health.ToString();
+            Time.timeScale = 0;
+            GameOverUI.SetActive(true);
+            BackgroundMusic.Stop();
+
+            GameObject cam = GameObject.FindWithTag("MainCamera");
+            cam.GetComponent<CameraMovement>().enabled = false;
+
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+
+            SkorManager.score = 0;
+        }
+
+        if (jawabanBenar)
+        {
+
+        }
     }
 
     void Move()
@@ -153,7 +168,7 @@ public class PlayerController : MonoBehaviour
 
         if (col.gameObject.tag == "WinZone")
         {
-            Destroy(DeathZone3);
+            Destroy(DeathZone);
         }
         if (col.gameObject.tag == "Win")
         {
@@ -177,6 +192,8 @@ public class PlayerController : MonoBehaviour
             Destroy(gerbang);
             papanTulisAnim.Play("PapanTulisJatoh");
             Destroy(jawaban2);
+            correctMusic.Play();
+            
 
         }
         if(col.gameObject.tag == "Jawaban2")
@@ -185,6 +202,9 @@ public class PlayerController : MonoBehaviour
             jawabanBenar = false;
             Invoke("matikanObject", 2);
             Debug.Log("Salah");
+            Health--;
+            healthText.text = "Health: " + Health.ToString();
+            wrongMusic.Play();
         }
 
         if (col.gameObject.tag == "Jawaban3")
@@ -195,6 +215,8 @@ public class PlayerController : MonoBehaviour
             balokAnim.Play("BalokNaik");
             Destroy(jawaban4);
             Destroy(jawaban5);
+            correctMusic.Play();
+            
         }
 
         if (col.gameObject.tag == "Jawaban4")
@@ -204,6 +226,9 @@ public class PlayerController : MonoBehaviour
             jawaban5.SetActive(false);
             jawabanBenar = false;
             Debug.Log("Salah");
+            Health--;
+            healthText.text = "Health: " + Health.ToString();
+            wrongMusic.Play();
         }
 
         if (col.gameObject.tag == "Jawaban5")
@@ -213,6 +238,9 @@ public class PlayerController : MonoBehaviour
             jawaban4.SetActive(false);
             jawaban3.SetActive(false);
             Debug.Log("Salah");
+            Health--;
+            healthText.text = "Health: " + Health.ToString();
+            wrongMusic.Play();
         }
 
         if (col.gameObject.tag == "Jembatan1")
@@ -220,46 +248,32 @@ public class PlayerController : MonoBehaviour
 
         }
 
-        //if (col.gameObject.tag == "Score")
-        //{
-        //    if (score == +2)
-        //    {
-        //        score += 1;
-        //        scoreText.text = "Score: " + score.ToString();
-        //    }
-        //    else
-        //    {
-        //        score++;
-        //        scoreText.text = "Score: " + score.ToString();
-        //    }
-            
-           
-        //}
+        
+        
 
         if (col.gameObject.tag == "DeathZone" || col.gameObject.tag == "Obstacle")
         {
-            Time.timeScale = 0;
-            //deathSound.Play();
-            //Health--;
-            //healthText.text = "Health: " + Health.ToString();
+            deathSound.Play();
+            Health--;
+            healthText.text = "Health: " + Health.ToString();
 
-            //if (Health <= 0)
-            //{
-            //    Health = 0;
-            //    healthText.text = "Health: " + Health.ToString();
-            //    Time.timeScale = 0;
-            //    GameOverUI.SetActive(true);
-            //    BackgroundMusic.Stop();
+            if (Health <= 0)
+            {
+                Health = 0;
+                healthText.text = "Health: " + Health.ToString();
+                Time.timeScale = 0;
+                GameOverUI.SetActive(true);
+                BackgroundMusic.Stop();
 
-            //    GameObject cam = GameObject.FindWithTag("MainCamera");
-            //    cam.GetComponent<CameraMovement>().enabled = false;
+                GameObject cam = GameObject.FindWithTag("MainCamera");
+                cam.GetComponent<CameraMovement>().enabled = false;
 
-            //    Cursor.lockState = CursorLockMode.None;
-            //    Cursor.visible = true;
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
 
-            //    SkorManager.score = 0;
+                SkorManager.score = 0;
 
-            //}
+            }
             
 
         }

@@ -1,32 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class EnemyFollow : MonoBehaviour
 {
-    private Transform player;
-    private float distance;
-    public float speed;
-    public float jarak;
-
-    private void Start()
-    {
-        player = GameObject.FindGameObjectWithTag("Player").transform;
-    }
+    public NavMeshAgent enemy;
+    public Transform Player;
 
     private void Update()
     {
-        KejarPlayer();
-    }
-
-    void KejarPlayer()
-    {
-        distance = Vector3.Distance(player.position, transform.position);
-
-        if (distance <= jarak)
-        {
-            transform.LookAt(player);
-            GetComponent<Rigidbody>().AddForce(transform.forward * speed);
-        }
+        enemy.SetDestination(Player.position);
     }
 }
