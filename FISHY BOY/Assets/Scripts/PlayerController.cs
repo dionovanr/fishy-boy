@@ -200,8 +200,9 @@ public class PlayerController : MonoBehaviour
         if (col.gameObject.tag == "Jawaban4")
         {
             jawaban4.SetActive(true);
+            jawaban3.SetActive(false);
+            jawaban5.SetActive(false);
             jawabanBenar = false;
-            Invoke("matikanObject", 2);
             Debug.Log("Salah");
         }
 
@@ -209,7 +210,8 @@ public class PlayerController : MonoBehaviour
         {
             jawaban5.SetActive(true);
             jawabanBenar = false;
-            Invoke("matikanObject", 2);
+            jawaban4.SetActive(false);
+            jawaban3.SetActive(false);
             Debug.Log("Salah");
         }
 
