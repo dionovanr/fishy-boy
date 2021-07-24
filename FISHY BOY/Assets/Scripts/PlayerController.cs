@@ -9,7 +9,7 @@ public class PlayerController : MonoBehaviour
     public Vector3 jump;
     public float jumpForce, angin;
     Rigidbody rb;
-    public GameObject cam1, cam2, cam3, triggerAngin, DeathZone3, winUI, jawaban1, jawaban2, gerbang, switchButtonOn, switchButtonoff;
+    public GameObject cam1, cam2, cam3, triggerAngin, DeathZone3, winUI, jawaban1, jawaban2, jawaban3, jawaban4, jawaban5, gerbang, switchButtonOn, switchButtonoff;
     public AudioSource clickButton, deathSound, BackgroundMusic;
 
     bool isGround, jawabanBenar;
@@ -33,7 +33,7 @@ public class PlayerController : MonoBehaviour
     public Text scoreText, healthText;
     public GameObject GameOverUI;
 
-    public Animator papanTulisAnim;
+    public Animator papanTulisAnim, balokAnim;
 
     // Start is called before the first frame update
     void Start()
@@ -187,6 +187,32 @@ public class PlayerController : MonoBehaviour
             Debug.Log("Salah");
         }
 
+        if (col.gameObject.tag == "Jawaban3")
+        {
+            jawaban3.SetActive(true);
+            jawabanBenar = true;
+            Debug.Log("Benar");
+            balokAnim.Play("BalokNaik");
+            Destroy(jawaban4);
+            Destroy(jawaban5);
+        }
+
+        if (col.gameObject.tag == "Jawaban4")
+        {
+            jawaban4.SetActive(true);
+            jawabanBenar = false;
+            Invoke("matikanObject", 2);
+            Debug.Log("Salah");
+        }
+
+        if (col.gameObject.tag == "Jawaban5")
+        {
+            jawaban5.SetActive(true);
+            jawabanBenar = false;
+            Invoke("matikanObject", 2);
+            Debug.Log("Salah");
+        }
+
         if (col.gameObject.tag == "Jembatan1")
         {
 
@@ -269,6 +295,8 @@ public class PlayerController : MonoBehaviour
     void matikanObject()
     {
         jawaban2.SetActive(false);
+        jawaban4.SetActive(false);
+        jawaban5.SetActive(false);
     }
 
 
