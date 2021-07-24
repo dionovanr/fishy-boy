@@ -238,27 +238,28 @@ public class PlayerController : MonoBehaviour
 
         if (col.gameObject.tag == "DeathZone" || col.gameObject.tag == "Obstacle")
         {
-            deathSound.Play();
-            Health--;
-            healthText.text = "Health: " + Health.ToString();
+            Time.timeScale = 0;
+            //deathSound.Play();
+            //Health--;
+            //healthText.text = "Health: " + Health.ToString();
 
-            if (Health <= 0)
-            {
-                Health = 0;
-                healthText.text = "Health: " + Health.ToString();
-                Time.timeScale = 0;
-                GameOverUI.SetActive(true);
-                BackgroundMusic.Stop();
+            //if (Health <= 0)
+            //{
+            //    Health = 0;
+            //    healthText.text = "Health: " + Health.ToString();
+            //    Time.timeScale = 0;
+            //    GameOverUI.SetActive(true);
+            //    BackgroundMusic.Stop();
 
-                GameObject cam = GameObject.FindWithTag("MainCamera");
-                cam.GetComponent<CameraMovement>().enabled = false;
+            //    GameObject cam = GameObject.FindWithTag("MainCamera");
+            //    cam.GetComponent<CameraMovement>().enabled = false;
 
-                Cursor.lockState = CursorLockMode.None;
-                Cursor.visible = true;
+            //    Cursor.lockState = CursorLockMode.None;
+            //    Cursor.visible = true;
 
-                SkorManager.score = 0;
+            //    SkorManager.score = 0;
 
-            }
+            //}
             
 
         }

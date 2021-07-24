@@ -795,7 +795,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7bf5d22fd904cbd45810f1d892df3f32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Jembatan: {fileID: 1236904709}
+  JembatanYangDipanggil: {fileID: 0}
   jembatanFalse: {fileID: 742632295}
   jembatanAwal: {fileID: 592517591}
 --- !u!1 &187524355
@@ -889,7 +889,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1 &213615262 stripped
 GameObject:
@@ -2310,12 +2310,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 44
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
---- !u!4 &687775246 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 171635929851031645, guid: 0a70e194270301b41af63d327d0a88ff,
-    type: 3}
-  m_PrefabInstance: {fileID: 1136833561}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &696593960
 GameObject:
   m_ObjectHideFlags: 0
@@ -2450,7 +2444,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 707984094}
-  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: -1.09}
   m_LocalScale: {x: 0.6454528, y: 0.6454528, z: 0.6454528}
   m_Children: []
@@ -2877,7 +2871,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7bf5d22fd904cbd45810f1d892df3f32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Jembatan: {fileID: 742632295}
+  JembatanYangDipanggil: {fileID: 0}
   jembatanFalse: {fileID: 1236904709}
   jembatanAwal: {fileID: 592517591}
 --- !u!1 &915229416
@@ -3200,7 +3194,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7bf5d22fd904cbd45810f1d892df3f32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Jembatan: {fileID: 213615262}
+  JembatanYangDipanggil: {fileID: 0}
   jembatanFalse: {fileID: 1702361276}
   jembatanAwal: {fileID: 110845785}
 --- !u!1 &1012154839
@@ -3591,7 +3585,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7bf5d22fd904cbd45810f1d892df3f32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Jembatan: {fileID: 2050240880}
+  JembatanYangDipanggil: {fileID: 0}
   jembatanFalse: {fileID: 1309141250}
   jembatanAwal: {fileID: 1650478426}
 --- !u!1001 &1136833561
@@ -5287,7 +5281,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7bf5d22fd904cbd45810f1d892df3f32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Jembatan: {fileID: 1702361276}
+  JembatanYangDipanggil: {fileID: 0}
   jembatanFalse: {fileID: 213615262}
   jembatanAwal: {fileID: 110845785}
 --- !u!1 &1716388394
@@ -6133,7 +6127,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f0c08b7f919c0a479f1d97ed9382072, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 687775246}
+  target: {fileID: 0}
   smoothing: 5
 --- !u!1 &1888962413
 GameObject:
@@ -6642,7 +6636,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7bf5d22fd904cbd45810f1d892df3f32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Jembatan: {fileID: 1309141250}
+  JembatanYangDipanggil: {fileID: 0}
   jembatanFalse: {fileID: 2050240880}
   jembatanAwal: {fileID: 1650478426}
 --- !u!1 &2008541284

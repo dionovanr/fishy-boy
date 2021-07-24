@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class JembatanTrigger : MonoBehaviour
 {
-    public GameObject Jembatan, jembatanFalse, jembatanAwal;
+    public GameObject JembatanYangDipanggil, jembatanFalse1, jembatanAwal, jembatanFalse2;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,9 +21,10 @@ public class JembatanTrigger : MonoBehaviour
     {
         if (col.gameObject.tag == "Player")
         {
-            Jembatan.SetActive(true);
-            jembatanFalse.SetActive(false);
+            JembatanYangDipanggil.SetActive(true);
+            jembatanFalse1.SetActive(false);
             jembatanAwal.SetActive(false);
+            jembatanFalse2.SetActive(false);
         }
     }
 }
