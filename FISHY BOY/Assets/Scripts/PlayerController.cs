@@ -33,6 +33,8 @@ public class PlayerController : MonoBehaviour
     public Text scoreText, healthText;
     public GameObject GameOverUI;
 
+    public Animator papanTulisAnim;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -48,6 +50,8 @@ public class PlayerController : MonoBehaviour
 
         GameObject wind = GameObject.FindWithTag("Baling-Baling");
         wind.GetComponent<RotateObject>().enabled = false;
+
+        papanTulisAnim = GetComponent<Animator>();
 
     }
 
@@ -171,6 +175,8 @@ public class PlayerController : MonoBehaviour
             jawabanBenar = true;
             Debug.Log("Benar");
             Destroy(gerbang);
+            papanTulisAnim.Play("PapanTulisJatoh");
+            Destroy(jawaban2);
 
         }
         if(col.gameObject.tag == "Jawaban2")
