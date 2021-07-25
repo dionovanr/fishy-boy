@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class Menu : MonoBehaviour
 {
+    public GameObject pauseMenu;
+
     public void Stage1()
     {
         SceneManager.LoadScene("STAGE 1");
@@ -34,4 +36,18 @@ public class Menu : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
+
+    public void Resume()
+    {
+        GameObject cam = GameObject.FindWithTag("MainCamera");
+        cam.GetComponent<CameraMovement>().enabled = true;
+
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+
+        pauseMenu.SetActive(false);
+        Time.timeScale = 1;
+    }
+
+    
 }

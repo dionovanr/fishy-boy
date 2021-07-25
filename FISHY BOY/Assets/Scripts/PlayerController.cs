@@ -9,7 +9,7 @@ public class PlayerController : MonoBehaviour
     public Vector3 jump;
     public float jumpForce, angin;
     Rigidbody rb;
-    public GameObject cam1, cam2, cam3, triggerAngin, DeathZone, winUI, jawaban1, jawaban2, jawaban3, jawaban4, jawaban5, gerbang, switchButtonOn, switchButtonoff;
+    public GameObject cam1, cam2, cam3, triggerAngin, DeathZone, winUI, jawaban1, jawaban2, jawaban3, jawaban4, jawaban5, gerbang, switchButtonOn, switchButtonoff, pauseMenu;
     public GameObject buttonJawaban1, buttonJawaban2;
     public AudioSource clickButton, deathSound, BackgroundMusic, wrongMusic, correctMusic;
 
@@ -106,10 +106,7 @@ public class PlayerController : MonoBehaviour
             SkorManager.score = 0;
         }
 
-        if (jawabanBenar)
-        {
-
-        }
+        Pause();
     }
 
     void Move()
@@ -321,5 +318,23 @@ public class PlayerController : MonoBehaviour
         jawaban5.SetActive(false);
     }
 
+    void Pause()
+    {
+       
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                pauseMenu.SetActive(true);
+                Time.timeScale = 0;
+
+                GameObject cam = GameObject.FindWithTag("MainCamera");
+                cam.GetComponent<CameraMovement>().enabled = false;
+
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
+
+
+            }
+        
+    }
 
 }
