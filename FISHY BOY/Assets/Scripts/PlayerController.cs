@@ -36,7 +36,7 @@ public class PlayerController : MonoBehaviour
 
     public Animator papanTulisAnim, balokAnim;
 
-    public GameObject soal1, soal2, soal3, soal4, jwb1, jwb2, jwb3;
+    public GameObject soal1, soal2, soal3, soal4, jwb1, jwb2, jwb3, tembok, air;
 
     // Start is called before the first frame update
     void Start()
@@ -306,7 +306,10 @@ public class PlayerController : MonoBehaviour
 
         if (col.gameObject.tag == "Benar3")
         {
-
+            air.SetActive(true);
+            tembok.SetActive(false);
+            DestroySoal3();
+            
         }
 
         if (col.gameObject.tag == "Salah1")
@@ -385,6 +388,12 @@ public class PlayerController : MonoBehaviour
     {
         soal3.SetActive(true);
         jwb3.SetActive(true);
+    }
+
+    void DestroySoal3()
+    {
+        soal3.SetActive(false);
+        jwb3.SetActive(false);
     }
 
 
