@@ -2635,7 +2635,7 @@ PrefabInstance:
     - target: {fileID: 2232682688265920952, guid: 9ce077a8c40eeee48887f7b477282c92,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -11.965
+      value: -11.727
       objectReference: {fileID: 0}
     - target: {fileID: 2232682688265920952, guid: 9ce077a8c40eeee48887f7b477282c92,
         type: 3}
@@ -16171,6 +16171,7 @@ GameObject:
   - component: {fileID: 870863631962266637}
   - component: {fileID: 107651039909552166}
   - component: {fileID: 107651039909552167}
+  - component: {fileID: 107651039909552168}
   m_Layer: 0
   m_Name: Cube.007
   m_TagString: Obstacle
@@ -16210,6 +16211,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &107651039909552168
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 107651039909552165}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60517eabe19897b478b17ff68f5952f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Checkpoint: {fileID: 1795440379}
 --- !u!1 &123767463936465515
 GameObject:
   m_ObjectHideFlags: 0
@@ -18819,6 +18833,7 @@ GameObject:
   - component: {fileID: 1912338960192604677}
   - component: {fileID: 1560736604793630538}
   - component: {fileID: 1560736604793630539}
+  - component: {fileID: 1560736604793630540}
   m_Layer: 0
   m_Name: Cube.005
   m_TagString: Obstacle
@@ -18858,6 +18873,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1560736604793630540
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1560736604793630537}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60517eabe19897b478b17ff68f5952f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Checkpoint: {fileID: 1795440379}
 --- !u!1 &1576197184598136452
 GameObject:
   m_ObjectHideFlags: 0
@@ -20181,6 +20209,7 @@ GameObject:
   - component: {fileID: 7621768722733516955}
   - component: {fileID: 2303968627598511775}
   - component: {fileID: 2303968627598511776}
+  - component: {fileID: 2303968627598511777}
   m_Layer: 0
   m_Name: Cube.009
   m_TagString: Obstacle
@@ -20220,6 +20249,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &2303968627598511777
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2303968627598511774}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60517eabe19897b478b17ff68f5952f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Checkpoint: {fileID: 1795440379}
 --- !u!4 &2332347878229023111
 Transform:
   m_ObjectHideFlags: 0
@@ -22118,6 +22160,7 @@ GameObject:
   - component: {fileID: 4748339966238518124}
   - component: {fileID: 3392144227413513208}
   - component: {fileID: 3392144227413513209}
+  - component: {fileID: 3392144227413513210}
   m_Layer: 0
   m_Name: Cube.015
   m_TagString: Obstacle
@@ -22157,6 +22200,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &3392144227413513210
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3392144227413513207}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60517eabe19897b478b17ff68f5952f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Checkpoint: {fileID: 1795440379}
 --- !u!23 &3396136414622344906
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -33372,6 +33428,7 @@ GameObject:
   - component: {fileID: 8259361368137392020}
   - component: {fileID: 9191219810697054050}
   - component: {fileID: 9191219810697054051}
+  - component: {fileID: 9191219810697054052}
   m_Layer: 0
   m_Name: Cube.008
   m_TagString: Obstacle
@@ -33411,6 +33468,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &9191219810697054052
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9191219810697054049}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60517eabe19897b478b17ff68f5952f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Checkpoint: {fileID: 1795440379}
 --- !u!33 &9196025575960197407
 MeshFilter:
   m_ObjectHideFlags: 0
