@@ -43,6 +43,13 @@ TagManager:
   - Baling-Baling2
   - Jawaban4
   - Jawaban5
+  - Buah1
+  - Buah2
+  - Buah3
+  - Salah2
+  - Salah1
+  - Benar2
+  - Benar3
   layers:
   - Default
   - TransparentFX

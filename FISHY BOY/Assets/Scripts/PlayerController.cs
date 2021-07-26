@@ -36,6 +36,8 @@ public class PlayerController : MonoBehaviour
 
     public Animator papanTulisAnim, balokAnim;
 
+    public GameObject soal1, soal2, soal3, soal4, jwb1, jwb2, jwb3;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -276,11 +278,43 @@ public class PlayerController : MonoBehaviour
                 SkorManager.score = 0;
 
             }
-            
+        }
+
+        if (col.gameObject.tag == "Camera Trigger1")
+        {
+                    cam2.SetActive(true);
+                    cam1.SetActive(false);
+                    moveSpeed += 1;
+        }
+
+        if (col.gameObject.tag == "Benar")
+        {
+            soal1.SetActive(false);
+            jwb1.SetActive(false);
+
+            Invoke("TampilSoal2", 2);
 
         }
 
-        isGround = true;
+        if (col.gameObject.tag == "Benar2")
+        {
+            soal2.SetActive(false);
+            jwb2.SetActive(false);
+
+            Invoke("TampilSoal3", 2);
+        }
+
+        if (col.gameObject.tag == "Benar3")
+        {
+
+        }
+
+        if (col.gameObject.tag == "Salah1")
+        {
+
+        }
+
+            isGround = true;
     }
 
     //private void OnTriggerExit(Collider col)
@@ -316,6 +350,8 @@ public class PlayerController : MonoBehaviour
         jawaban2.SetActive(false);
         jawaban4.SetActive(false);
         jawaban5.SetActive(false);
+
+        
     }
 
     void Pause()
@@ -336,5 +372,20 @@ public class PlayerController : MonoBehaviour
             }
         
     }
+
+   
+
+    void TampilSoal2()
+    {
+        soal2.SetActive(true);
+        jwb2.SetActive(true);
+    }
+
+    void TampilSoal3()
+    {
+        soal3.SetActive(true);
+        jwb3.SetActive(true);
+    }
+
 
 }
