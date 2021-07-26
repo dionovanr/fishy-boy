@@ -1564,16 +1564,24 @@ MonoBehaviour:
   cam2: {fileID: 0}
   cam3: {fileID: 0}
   triggerAngin: {fileID: 0}
-  DeathZone3: {fileID: 0}
+  DeathZone: {fileID: 0}
   winUI: {fileID: 0}
   jawaban1: {fileID: 0}
   jawaban2: {fileID: 0}
+  jawaban3: {fileID: 0}
+  jawaban4: {fileID: 0}
+  jawaban5: {fileID: 0}
   gerbang: {fileID: 0}
   switchButtonOn: {fileID: 0}
   switchButtonoff: {fileID: 0}
+  pauseMenu: {fileID: 0}
+  buttonJawaban1: {fileID: 0}
+  buttonJawaban2: {fileID: 0}
   clickButton: {fileID: 0}
   deathSound: {fileID: 0}
   BackgroundMusic: {fileID: 0}
+  wrongMusic: {fileID: 0}
+  correctMusic: {fileID: 0}
   checkDistance: 0
   GroundCheck: {fileID: 0}
   GroundMask:
@@ -1582,9 +1590,12 @@ MonoBehaviour:
   PlayerMesh: {fileID: 7717811576475690424}
   canJump: 1
   canMove: 1
+  Health: 5
   scoreText: {fileID: 0}
   healthText: {fileID: 0}
   GameOverUI: {fileID: 0}
+  papanTulisAnim: {fileID: 0}
+  balokAnim: {fileID: 0}
 --- !u!135 &6940324173198360327
 SphereCollider:
   m_ObjectHideFlags: 0

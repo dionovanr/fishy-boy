@@ -14,7 +14,7 @@ public class Menu : MonoBehaviour
 
     public void Stage2()
     {
-
+        SceneManager.LoadScene("STAGE 2");
     }
 
     public void Stage3()
@@ -48,6 +48,8 @@ public class Menu : MonoBehaviour
         pauseMenu.SetActive(false);
         Time.timeScale = 1;
     }
+
+   
 
     
 }
