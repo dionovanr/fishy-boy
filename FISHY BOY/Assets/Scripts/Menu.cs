@@ -5,7 +5,13 @@ using UnityEngine.SceneManagement;
 
 public class Menu : MonoBehaviour
 {
+    public int nextSceneLoad;
     public GameObject pauseMenu;
+
+    void Start()
+    {
+        nextSceneLoad = SceneManager.GetActiveScene().buildIndex + 1;
+    }
 
     public void Stage1()
     {
@@ -19,7 +25,7 @@ public class Menu : MonoBehaviour
 
     public void Stage3()
     {
-
+        SceneManager.LoadScene("STAGE 3");
     }
 
     public void ExitGame()
@@ -49,7 +55,27 @@ public class Menu : MonoBehaviour
         Time.timeScale = 1;
     }
 
-   
+   public void NextLevel()
+    {
+        if (SceneManager.GetActiveScene().buildIndex == 3 ) /* < Change this int value to whatever your
+                                                                   last level build index is on your
+                                                                   build settings */
+        {
+            Debug.Log("You Completed ALL Levels");
+            //Show Win Screen or Somethin. 
+        }
+        else
+        {
+            //Move to next level
+            SceneManager.LoadScene(nextSceneLoad);
+
+            //Setting Int for Index
+            if (nextSceneLoad > PlayerPrefs.GetInt("levelAt"))
+            {
+                PlayerPrefs.SetInt("levelAt", nextSceneLoad);
+            }
+        }
+    }
 
     
 }

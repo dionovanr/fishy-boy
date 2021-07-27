@@ -10,6 +10,7 @@ public class Timer : MonoBehaviour
 
     public Text timerText;
     public GameObject GameOverUI;
+    public AudioSource BackgroundMusic;
 
     private void Start()
     {
@@ -26,10 +27,10 @@ public class Timer : MonoBehaviour
             currentTime = 0;
             Time.timeScale = 0;
             GameOverUI.SetActive(true);
-            //BackgroundMusic.Stop();
+            BackgroundMusic.Stop();
 
-            //GameObject cam = GameObject.FindWithTag("MainCamera");
-            //cam.GetComponent<CameraMovement>().enabled = false;
+            GameObject cam = GameObject.FindWithTag("MainCamera");
+            cam.GetComponent<CameraMovement>().enabled = false;
 
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;

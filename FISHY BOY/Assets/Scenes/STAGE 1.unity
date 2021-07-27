@@ -7844,7 +7844,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 263, y: -126}
+  m_AnchoredPosition: {x: 317, y: -126}
   m_SizeDelta: {x: 499.0751, y: 122.99048}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1144532833
@@ -7860,7 +7860,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0.7719127, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -7868,7 +7868,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 4de6e2dba8134da4f962572d42cc8b3e, type: 3}
     m_FontSize: 105
     m_FontStyle: 0
     m_BestFit: 0
@@ -13132,7 +13132,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 214, y: 266}
+  m_AnchoredPosition: {x: 262.00006, y: 281}
   m_SizeDelta: {x: 347.724, y: 89.059}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1316289221
@@ -13148,7 +13148,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0.7719127, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -13156,7 +13156,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 4de6e2dba8134da4f962572d42cc8b3e, type: 3}
     m_FontSize: 70
     m_FontStyle: 0
     m_BestFit: 0
@@ -13652,6 +13652,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 799c689f07bd66b44a7fcc11e828de94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  nextSceneLoad: 2
   pauseMenu: {fileID: 691240784}
 --- !u!1 &1400764268
 GameObject:
@@ -41688,7 +41689,7 @@ PrefabInstance:
     - target: {fileID: 9165056217147179909, guid: 5a26655d07da1234494a13088af63dc4,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Stage2
+      value: NextLevel
       objectReference: {fileID: 0}
     - target: {fileID: 9165056217147179909, guid: 5a26655d07da1234494a13088af63dc4,
         type: 3}
