@@ -21,7 +21,7 @@ public class ObjectReSpawn : MonoBehaviour
 
     private void OnTriggerEnter(Collider col)
     {
-        if (col.gameObject.name == "DZ3" || col.gameObject.tag == "Lantai")
+        if (col.gameObject.name == "DZ3" || col.gameObject.name == "Lantai")
         {
  
             StartCoroutine(RespawnObject());
