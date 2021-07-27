@@ -9,7 +9,7 @@ public class PlayerController : MonoBehaviour
     public Vector3 jump;
     public float jumpForce, angin;
     Rigidbody rb;
-    public GameObject cam1, cam2, cam3, triggerAngin, DeathZone, winUI, jawaban1, jawaban2, jawaban3, jawaban4, jawaban5, gerbang, switchButtonOn, switchButtonoff, pauseMenu;
+    public GameObject cam1, cam2, cam3, triggerAngin, DeathZone, winUI, jawaban1, jawaban2, jawaban3, jawaban4, jawaban5, gerbang, switchButtonOn, switchButtonoff, pauseMenu, triggerAngin2;
     public GameObject buttonJawaban1, buttonJawaban2;
     public AudioSource clickButton, deathSound, BackgroundMusic, wrongMusic, correctMusic;
 
@@ -36,7 +36,7 @@ public class PlayerController : MonoBehaviour
 
     public Animator papanTulisAnim, balokAnim;
 
-    public GameObject soal1, soal2, soal3, soal4, jwb1, jwb2, jwb3, tembok, air;
+    public GameObject soal1, soal2, soal3, soal4, jwb1, jwb2, jwb3, tembok, air, timer, timerUI;
 
     // Start is called before the first frame update
     void Start()
@@ -55,6 +55,8 @@ public class PlayerController : MonoBehaviour
         wind.GetComponent<RotateObject>().enabled = false;
 
         papanTulisAnim = GetComponent<Animator>();
+
+        
 
     }
 
@@ -97,7 +99,7 @@ public class PlayerController : MonoBehaviour
             healthText.text = "Health: " + Health.ToString();
             Time.timeScale = 0;
             GameOverUI.SetActive(true);
-            BackgroundMusic.Stop();
+            //BackgroundMusic.Stop();
 
             GameObject cam = GameObject.FindWithTag("MainCamera");
             cam.GetComponent<CameraMovement>().enabled = false;
@@ -109,6 +111,12 @@ public class PlayerController : MonoBehaviour
         }
 
         Pause();
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+        }
     }
 
     void Move()
@@ -145,10 +153,13 @@ public class PlayerController : MonoBehaviour
         {
             cam1.SetActive(false);
             cam2.SetActive(true);
+            cam3.SetActive(false);
+            moveSpeed = 0.5f;
         }
 
         if (col.gameObject.tag == "Camera Trigger2")
         {
+            cam1.SetActive(false);
             cam2.SetActive(false);
             cam3.SetActive(true);
         }
@@ -162,6 +173,16 @@ public class PlayerController : MonoBehaviour
 
             switchButtonOn.SetActive(true);
             switchButtonoff.SetActive(false);
+
+            clickButton.Play();
+        }
+
+        if (col.gameObject.tag == "Switch Angin 2")
+        {
+            triggerAngin2.SetActive(true);
+
+            //GameObject wind = GameObject.FindWithTag("Baling-Baling");
+            //wind.GetComponent<RotateObject>().enabled = true;
 
             clickButton.Play();
         }
@@ -247,9 +268,10 @@ public class PlayerController : MonoBehaviour
             wrongMusic.Play();
         }
 
-        if (col.gameObject.tag == "Jembatan1")
+        if (col.gameObject.tag == "Timer")
         {
-
+            timer.SetActive(true);
+            timerUI.SetActive(true);
         }
 
         
@@ -291,6 +313,7 @@ public class PlayerController : MonoBehaviour
         {
             soal1.SetActive(false);
             jwb1.SetActive(false);
+            correctMusic.Play();
 
             Invoke("TampilSoal2", 2);
 
@@ -300,6 +323,7 @@ public class PlayerController : MonoBehaviour
         {
             soal2.SetActive(false);
             jwb2.SetActive(false);
+            correctMusic.Play();
 
             Invoke("TampilSoal3", 2);
         }
@@ -309,12 +333,19 @@ public class PlayerController : MonoBehaviour
             air.SetActive(true);
             tembok.SetActive(false);
             DestroySoal3();
-            
+            correctMusic.Play();
+            Destroy(timer);
+            timerUI.SetActive(false);
+
+   
+
         }
 
         if (col.gameObject.tag == "Salah1")
         {
-
+            wrongMusic.Play();
+            Health -= 1;
+            healthText.text = "Health: " + Health.ToString();
         }
 
             isGround = true;

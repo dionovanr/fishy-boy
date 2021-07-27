@@ -9,7 +9,7 @@ public class Timer : MonoBehaviour
     public float startingTime;
 
     public Text timerText;
-    public GameObject timesUp;
+    public GameObject GameOverUI;
 
     private void Start()
     {
@@ -24,8 +24,17 @@ public class Timer : MonoBehaviour
         if (currentTime <= 0)
         {
             currentTime = 0;
-            timesUp.SetActive(true);
             Time.timeScale = 0;
+            GameOverUI.SetActive(true);
+            //BackgroundMusic.Stop();
+
+            //GameObject cam = GameObject.FindWithTag("MainCamera");
+            //cam.GetComponent<CameraMovement>().enabled = false;
+
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+
+            SkorManager.score = 0;
         }
     }
 }

@@ -50,6 +50,8 @@ TagManager:
   - Salah1
   - Benar2
   - Benar3
+  - Merah
+  - Ijo
   layers:
   - Default
   - TransparentFX

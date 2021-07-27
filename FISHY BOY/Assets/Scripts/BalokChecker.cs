@@ -4,13 +4,17 @@ using UnityEngine;
 
 public class BalokChecker : MonoBehaviour
 {
-    public GameObject Gerbang, GerbangOpen;
+    public GameObject Gerbang, GerbangOpen, platform;
+
+ 
+    public Animator papanJatoh;
 
   
     // Start is called before the first frame update
     void Start()
     {
         //animGerbang = GetComponent<Animator>();
+        papanJatoh = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -18,8 +22,7 @@ public class BalokChecker : MonoBehaviour
     {
         if (PiringBuahMerah.buah2Matched == true && BuahIjo1.buah1Matched == true && BuahIjo2.buah3Matched == true)
         {
-            Destroy(Gerbang);
-            GerbangOpen.SetActive(true);
+            papanJatoh.Play("PapanJembatan");
         }
     }
 }
